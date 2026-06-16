@@ -63,7 +63,7 @@ window.onbeforeunload = () => {
 
 // Pulls hero content from a JSON file
 async function populate() {
-  const requestURL = "/hero-content.json";
+  const requestURL = "https://raw.githubusercontent.com/hermit-cait/website/main/hero-content.json";
   const request = new Request(requestURL);
   const response = await fetch(request);
   const cardsText = await response.text();
