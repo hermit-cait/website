@@ -1,3 +1,17 @@
+
+/*** TABLE OF CONTENTS: ***/
+
+/* Make the menu button clickable */
+/* Open menu, hide menu button and show close button */
+/* Make the close button clickable */
+/* Close menu, hide close button and show menu button again */
+/* Ensures that the nav bar is always visible during resizing of viewport */
+/* Clears contact form after sending */
+/* Pulls project data from a JSON file */
+/* Creates all the content which will contain the project data */
+
+/* -------------------------------- */
+
 // Make the menu button clickable
 document.getElementById("navMenu").addEventListener("click", navShowMenu);
 document.getElementById("navMenu").addEventListener("keydown", navShowMenu);
@@ -5,9 +19,11 @@ document.getElementById("navMenu").addEventListener("keydown", navShowMenu);
 // Open menu, hide menu button and show close button
 function navShowMenu() {
   document.getElementById("nav").style.transform = "scale(1, 1)";
-  document.getElementById("aboutLink").style.opacity = "1";
-  document.getElementById("projectsLink").style.opacity = "1";
-  document.getElementById("contactLink").style.opacity = "1";
+  document.getElementById("nav1").style.opacity = "1";
+  document.getElementById("nav2").style.opacity = "1";
+  document.getElementById("nav3").style.opacity = "1";
+  document.getElementById("nav4").style.opacity = "1";
+  document.getElementById("nav5").style.opacity = "1";
   document.getElementById("navMenu").style.opacity = "0";
   document.getElementById("navClose").style.transform = "scale(1, 1)";
   document.getElementById("navClose").style.opacity = "1";
@@ -45,58 +61,50 @@ window.onbeforeunload = () => {
   }
 }
 
-// Pulls project data from a JSON file
+// Pulls hero content from a JSON file
 async function populate() {
-  const requestURL = "https://raw.githubusercontent.com/hermit-cait/portfolio/main/project-data.json";
+  const requestURL = "https://raw.githubusercontent.com/hermit-cait/website/main/hero-content.json";
   const request = new Request(requestURL);
   const response = await fetch(request);
-  const projectsText = await response.text();
-  const content = JSON.parse(projectsText);
-  populateProjects(content);
+  const cardsText = await response.text();
+  const content = JSON.parse(cardsText);
+  populateCards(content);
 }
 
-// This function creates all the content which will contain the project data
-function populateProjects(obj) {
+// Prepares all the hero content
+function populateCards(obj) {
   const cardContainer = document.getElementById("cardContainer");
-  const projects = obj.projects;
-  for (const project of projects) {  
-    // Creates a new card for a project display
-    const card = document.createElement("article");
-    const projectName = document.createElement("h3");
-    const buttonTemplate = document.createElement('template');
+  const cards = obj.cards;
+  for (const card of cards) {  
+    // Creates a new card for hero content
+    const article = document.createElement("article");
+    const cardLink = document.createElement("a");
+    const cardName = document.createElement("h3");
     const description = document.createElement("p");
     description.className = "description";
 
-    // Adds project name to HTML
-    projectName.textContent = project.name;
-    // Adds buttons to HTML
-    buttonTemplate.innerHTML = `
-      <div class="buttonWrapper">
-        <a href="${project.buttonDemo}" target="_blank" class="button buttonDemo" id="buttonDemo">
-          <ion-icon name='globe-outline'></ion-icon>
-          <span>
-            Live Demo
-          </span>
-        </a>
-        <a href="${project.buttonCode}" target="_blank" class="button buttonCode" id="buttonCode">
-          <ion-icon name='logo-github'></ion-icon>
-          <span>
-            View Code
-          </span>
-        </a>
-      </div>
-    `;
-    // Adds project decription to HTML
-    description.textContent = project.description;
-    // Adds project image to HTML
+    // Adds card link to HTML
+    cardLink.href = card.cardLink;
+
+    // Adds class to link (to make whole card clickable)
+    cardLink.classList.add('clickableCard');
+
+    // Adds card name to HTML
+    cardName.textContent = card.name;
+  
+    // Adds card decription to HTML
+    description.textContent = card.description;
+
+    // Adds card image to HTML
     let image = new Image();
-    image.src = project.image;
+    image.src = card.image;
+
     // Adds all the above HTML to the card element and pushes it to the UI
-    card.appendChild(projectName);
-    card.appendChild(image);
-    card.appendChild(buttonTemplate.content)
-    card.appendChild(description);    
-    cardContainer.appendChild(card);
+    article.appendChild(cardLink);
+    article.appendChild(cardName);
+    article.appendChild(image);
+    article.appendChild(description);    
+    cardContainer.appendChild(article);
   }
 }
 populate()
