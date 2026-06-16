@@ -47,7 +47,7 @@ window.onbeforeunload = () => {
 
 // Pulls project data from a JSON file
 async function populate() {
-  const requestURL = "https://raw.githubusercontent.com/hermit-cait/portfolio/main/project-data.json";
+  const requestURL = "https://raw.githubusercontent.com/hermit-cait/website/main/portfolio/project-data.json";
   const request = new Request(requestURL);
   const response = await fetch(request);
   const projectsText = await response.text();
