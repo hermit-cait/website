@@ -1,0 +1,31 @@
+{
+    "title": "Caitlin Eybers",
+    "projects": [
+      {
+        "image": "https://raw.githubusercontent.com/hermit-cait/website/main/media/portfolio/project1.gif",
+        "name": "The Song Series",
+        "buttonDemo": "https://hermit-cait.github.io/song-series/",
+        "buttonCode": "https://github.com/hermit-cait/song-series",
+        "tech": ["HTML", " CSS"],
+        "description": "This is a set of three static webpages made with vanilla CSS that are each inspired by one of my favourite songs. My intention with this project was to practice the mobile first approach to creating responsive websites."
+      },
+
+      {
+        "image": "https://raw.githubusercontent.com/hermit-cait/website/main/media/portfolio/project2.gif",
+        "name": "Portfolio",
+        "buttonDemo": "https://hermit-cait.github.io/portfolio/",
+        "buttonCode": "https://github.com/hermit-cait/portfolio",
+        "tech": ["HTML", " CSS"],
+        "description": "This is my portfolio webpage built using HTML, CSS and Javascript. My plan was to use a very minimalist design and colour scheme with a little touch of bright green."
+      },
+
+      {
+        "image": "https://raw.githubusercontent.com/hermit-cait/website/main/media/portfolio/project3.gif",
+        "name": "Todo App",
+        "buttonDemo": "https://hermit-cait.github.io/todo/",
+        "buttonCode": "https://github.com/hermit-cait/todo",
+        "tech": ["React"],
+        "description": "This is a to-do list built using React. I made this simple application in order to familiarise myself with a Javascript library. It includes an editing feature, a clear button and it uses localStorage to save your data in your browser."
+      }
+    ]
+  }
