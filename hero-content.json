@@ -1,0 +1,24 @@
+{
+    "cards": [
+      {
+        "image": "/media/home/gif1.gif",
+        "name": "ART",
+        "cardLink": "#",
+        "description": "Lorem ipsum dolor sit amet."
+      },
+
+      {
+        "image": "/media/home/gif2.gif",
+        "name": "TECH",        
+        "cardLink": "#",
+        "description": "Is this the real life or is it just fantasy?"
+      },
+
+      {
+        "image": "/media/home/gif3.gif",
+        "name": "FUN",
+        "cardLink": "#",
+        "description": "Load up on guns. Bring your friends."
+      }
+    ]
+  }

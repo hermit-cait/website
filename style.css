@@ -1,0 +1,445 @@
+
+/*** TABLE OF CONTENTS: ***/
+
+/* Global styles */
+/* Mobile text styles */
+/* Mobile font sizes */
+/* Mobile layout */
+/* Hero card section - mobile */
+/* Footer section - mobile */
+/* Mobile navigation formatting */
+/* Heading gradient animation */
+/* Media queries for tablets */
+/* Desktop text styles */
+/* Desktop layout */
+/* Desktop navigation formatting */
+
+/* -------------------------------- */
+
+/* Global styles */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg-bold-green: #82ff3a;
+  --bg-dark-green: #154200;
+  --bg-pale-green: #c5e9a3;
+  --bg-light-grey: #f0f2eb;
+}
+
+/* Mobile text styles */
+
+h1,
+h2,
+h3,
+a,
+p,
+li,
+span,
+legend,
+label,
+input,
+textarea {
+  font-family: Figtree;
+  letter-spacing: 0.06rem;
+}
+
+a,
+a:visited {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;  
+}
+
+h2,
+footer {
+  text-align: center;
+}
+
+/* Mobile font sizes */
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  line-height: 1.5rem;
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+footer p,
+label,
+input {
+  font-size: 1rem;
+}
+
+legend {
+  font-size: 1.2rem;
+}
+
+.legendWrapper {  
+  text-align: center;
+}
+
+/* Mobile layout */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.logoContainer {
+  width: 100%;
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+}
+
+.logo ion-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-inline: 0.5rem;
+  transform: rotateY(180deg);
+}
+
+.hero-text {
+  margin-block-start: 10rem;
+}
+
+section {
+  margin-block-start: 6rem;
+  margin-inline: 1rem;
+}
+
+/* Hero card section - mobile */
+
+article {
+  background-color: var(--bg-light-grey);
+  border-radius: 1rem;
+  width: clamp(20rem, 90%, 30rem);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  position: relative;
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+article a {
+  text-align: center;
+}
+
+.button ion-icon {
+  width: 2rem;
+  height: 2rem;
+  margin-inline-end: 0.5rem;
+}
+
+img {
+  width: 85%;
+  border-radius: 1rem;
+  margin: 0 auto;
+  box-shadow: 2px 2px 5px rgb(170, 173, 163);
+}
+
+article p {
+  width: 85%;
+  margin: 0 auto;
+  margin-block: 1rem 3rem;
+}
+
+.clickableCard::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Footer section - mobile */
+
+footer {
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: 8rem;
+  margin-block-start: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Mobile navigation formatting */
+
+nav {
+  background-color: white;
+  position: absolute;
+  text-align: left;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 4rem 0 0.5rem 0;
+  z-index: 0;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 500ms ease-in 100ms ease-out;
+  -webkit-transition: transform 500ms ease-in 100ms ease-out;
+  border-bottom: 1px solid #eee;
+}
+
+nav a {
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 1300ms ease-in-out;
+  -webkit-transition: opacity 1300ms ease-in-out;
+}
+
+nav li {
+  font-size: 1.3rem;
+  padding: 1rem;
+}
+
+.navButtons {
+  height: 0;
+}
+
+.navButtons ion-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+#navMenu {
+  position: absolute;
+  left: 0.4rem;
+  transition: opacity 600ms ease-in-out;
+  -webkit-transition: opacity 600ms ease-in-out;
+}
+
+#navClose {  
+  position: absolute;
+  opacity: 0;
+  transition: opacity 600ms ease-in-out 600ms;
+  -webkit-transition: opacity 600ms ease-in-out 600ms;
+}
+
+.navCloseShift {  
+  transform: scale(1, 0);
+  transform-origin: top;
+}
+
+.home {
+  position: relative;
+  z-index: 1;
+}
+
+/* Heading gradient animation */
+
+@media (prefers-reduced-motion: no-preference) {
+
+  h1 {
+    background-image: linear-gradient(270deg, var(--bg-bold-green),var(--bg-dark-green));
+    background-size: 400% 400%;  
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: headingGradient 7s ease infinite;
+  }
+  
+  @-webkit-keyframes headingGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+
+  @-moz-keyframes headingGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+
+  @keyframes headingGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  
+  span.green {
+    color: transparent;
+  }
+
+}
+
+/* Media queries for tablets */
+
+@media (min-width: 600px) {
+
+  .hero-text,
+  .aboutMe {
+    width: clamp(30rem, calc(60% - 10rem), 50rem);
+    margin: 0 auto;
+    margin-block-start: 8rem;
+  }
+
+  .cardText {    
+    margin-block: 1.5rem 4rem;
+  }
+
+}
+
+/* DESKTOP MEDIA QUERIES */
+
+@media (min-width: 1200px) {
+
+  /* Desktop text styles */
+
+  .logoContainer a {
+    font-size: 1rem;
+  }
+
+  .logo ion-icon {
+    width: 3rem;
+    height: 3rem;
+    margin-block-end: 0.2rem;
+  }
+
+  /* Desktop layout */
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  article,
+  img {
+    display: block;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  article .button {
+    display: inline-block;
+    width: fit-content;
+    margin-inline: 0.3rem;
+    margin-block: 3rem 1.5rem;
+  }
+
+  article span {    
+    display: inline-block;
+    transform: translateY(-0.55rem);
+  }
+
+  .description {
+    margin-block: 2rem 3rem;
+  }
+
+  /* Desktop navigation formatting */
+
+  .navButtons ion-icon {
+    display: none;
+  }
+
+  header {
+    background-color: white;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 2px 2px 5px rgba(200, 200, 200, 0.3);
+  }
+
+  .logoContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-inline-start: 1rem;
+  }
+
+  .svgLogo {
+    display: flex;
+    margin-block-start: 3px;
+  }
+
+  nav {    
+    all: unset;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .navContainer {
+    height: 3rem;
+    display: flex;
+  }
+
+  nav ul {    
+    display: flex;
+    align-items: center;
+  }
+
+  nav li {
+    font-size: 1rem;
+    margin-inline-start: 0;
+    margin-inline-end: 5rem;
+    padding: 0;
+  }
+
+  nav a {
+    opacity: 1;
+    transition: none;
+    position: relative;
+  }
+
+  nav a::before {
+    content: '';
+    display: block;
+    height: 3px;
+    background: black; 
+    position: absolute;
+    top: -0.45rem;
+    left: 0;
+    right: 0; 
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+  }
+
+  nav a:hover::before {
+    transform: scale(1, 1);
+  }
+
+}
