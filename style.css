@@ -63,6 +63,10 @@ ul {
   list-style: none;  
 }
 
+ul.withDots {
+  list-style: circle;  
+}
+
 h2,
 footer {
   text-align: center;
