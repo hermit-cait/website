@@ -59,6 +59,10 @@ a {
   text-decoration: none;
 }
 
+a.funLinks {
+  text-decoration: underline;
+}
+
 ul {
   list-style: none;  
 }
