@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Caitlin Eybers</title>  
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+
+  <body>
+
+    <header>
+
+      <div class="home">
+
+        <div class="navButtons">
+          <ion-icon name="menu-outline" id="navMenu" tabindex="0" role="button"></ion-icon>
+          <ion-icon name="close-outline" id="navClose" class="navCloseShift" tabindex="0" role="button"></ion-icon>
+        </div>       
+    
+        <div class="logoContainer">
+          <div class="logo">          
+            <a href="#"><ion-icon name='planet-outline' class="svgLogo"></ion-icon></a>
+          </div>
+          <a href="#">Caitlin Eybers</a>  
+        </div>    
+    
+      </div>
+
+      <div class="navContainer">
+
+        <nav id="nav">
+          <ul>
+            <li><a href="#aboutMe" id="aboutLink">About Me</a></li>
+            <li><a href="#projects" id="projectsLink">Projects</a></li>
+            <li><a href="#contact" id="contactLink">Contact</a></li>
+          </ul>           
+        </nav>
+
+      </div>    
+
+    </header>  
+
+    <section class="hero" id="hero">
+
+      <h1>Hi, my name is <span class="green">Caitlin Eybers</span> and I am a <span class="green">QA tester</span>.</h1>
+      <p>I ensure that websites and apps are built correctly and easy to use. I am passionate about the internet and the experience of navigating it. I would love to work with you to make the web a more accessible and beautiful place.</p>
+
+    </section>
+
+    <section class="aboutMe" id="aboutMe">
+
+      <h2>About Me</h2>
+
+      <p>My work in QA originated from a love of frontend development and I am now a hobbyist coder. In my job I have the privilege of working with devs, QA engineers, designers and product owners. I find it very rewarding to collaborate towards delivering excellent digital products of all kinds.</p>
+        
+      <p>In terms of development: Vanilla CSS and Javascript are the technologies I enjoy using the most. I love playing around with static sites exploring granular aspects of UX and design such as colour, typography and layout.</p>
+
+      <div class="wrapperCV">
+        <a href="caitlin_eybers_cv.pdf" target="_blank" class="button buttonCV">View my CV</a>
+      </div>
+
+    </section>
+
+    <section class="techContainer">
+      
+      <h3 class="techLabel">Technologies I use for coding:</h3>
+      
+      <div class="tech html5">
+        <ion-icon name='logo-html5'></ion-icon>
+        <span>HTML</span>
+      </div>
+
+      <div class="tech css3">
+        <ion-icon name='logo-css3'></ion-icon>
+        <span>CSS</span>
+      </div>
+
+      <div class="tech javascript">
+        <ion-icon name='logo-javascript'></ion-icon>    
+        <span>Javascript</span>
+      </div>   
+
+      <div class="tech react">
+        <ion-icon name='logo-react'></ion-icon>            
+        <span>React</span>
+      </div>
+
+    </section>  
+
+    <section class="projects" id="projects">
+
+      <h2>Projects</h2>
+
+      <div class="cardContainer" id="cardContainer"></div>
+
+    </section>
+
+    <section class="contact" id="contact">
+
+      <h2>Contact</h2>
+
+      <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xyyaqlkz" method="post">
+
+        <fieldset id="fs-frm-inputs">              
+
+          <label for="full-name">Name</label>
+          <input type="text" name="name" id="full-name" required="" autocomplete="given-name">
+
+          <label for="email-address">Email</label>
+          <input type="email" name="_replyto" id="email-address" required="" autocomplete="on">
+
+          <label for="message">Message</label>
+          <textarea rows="5" name="message" id="message" required="" autocomplete="off"></textarea>
+          <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+
+        </fieldset>
+
+        <div class="submit">
+          <input class="submit" type="submit" value="Submit">
+        </div>
+
+      </form>
+
+    </section>
+
+    <script src="script.js"></script> 
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <footer><p>Website created by Caitlin Eybers</p></footer>
+
+  </body>
+
+</html>
